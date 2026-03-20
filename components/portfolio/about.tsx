@@ -116,6 +116,7 @@ export function About() {
                     alt="Natthachok Sonkaew - Professional"
                     fill
                     className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                    unoptimized
                   />
                   
                   {/* Overlay Pattern */}

@@ -148,6 +148,7 @@ export function Projects() {
                       "object-cover transition-transform duration-700",
                       hoveredIndex === idx ? "scale-110" : "scale-100"
                     )}
+                    unoptimized
                   />
                   
                   {/* Overlay on Hover */}
@@ -273,6 +274,7 @@ function ProjectModal({
             alt={project.title}
             fill
             className="object-cover"
+            unoptimized
           />
           <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
           

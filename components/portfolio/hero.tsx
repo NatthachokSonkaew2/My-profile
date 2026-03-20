@@ -162,6 +162,7 @@ export function Hero() {
                     fill
                     className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
                     priority
+                    unoptimized
                   />
                   
                   {/* Overlay Gradient */}

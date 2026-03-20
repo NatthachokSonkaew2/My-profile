@@ -112,10 +112,10 @@ export function About() {
               <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-primary to-violet-600 p-1">
                 <div className="relative aspect-[4/3] rounded-[22px] overflow-hidden bg-secondary">
                   <Image
-                    src="https://images.unsplash.com/photo-1549692520-acc6669e2f0c?w=800&h=600&fit=crop"
-                    alt="Working on code"
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_xj8gbpxj8gbpxj8g-uNjLi6Fxs1vM5EhYwQPKmxjbm5p8aC.png"
+                    alt="Natthachok Sonkaew - Professional"
                     fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
                   />
                   
                   {/* Overlay Pattern */}

@@ -157,10 +157,10 @@ export function Hero() {
                 <div className="relative aspect-[4/5] rounded-[1.25rem] overflow-hidden bg-secondary">
                   {/* Profile Image */}
                   <Image
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=750&fit=crop&crop=face"
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-vwC6gGDub2xKwDq00nSUEgjVcIqXCH.png"
                     alt="Natthachok Sonkaew"
                     fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
                     priority
                   />
                   

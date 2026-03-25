@@ -13,10 +13,7 @@ const certificates = [
     color: "from-emerald-400 to-teal-500",
     bgColor: "bg-emerald-50",
     borderColor: "border-emerald-200",
-<<<<<<< HEAD
-=======
     certificateUrl: "/certificates/learning-system.pdf",
->>>>>>> c96197e (first commit)
   },
   {
     icon: Code2,
@@ -27,10 +24,7 @@ const certificates = [
     color: "from-blue-400 to-indigo-500",
     bgColor: "bg-blue-50",
     borderColor: "border-blue-200",
-<<<<<<< HEAD
-=======
     certificateUrl: "/certificates/learning-system.pdf",
->>>>>>> c96197e (first commit)
   },
   {
     icon: Monitor,
@@ -41,10 +35,7 @@ const certificates = [
     color: "from-amber-400 to-orange-500",
     bgColor: "bg-amber-50",
     borderColor: "border-amber-200",
-<<<<<<< HEAD
-=======
     certificateUrl: "/certificates/learning-system.pdf",
->>>>>>> c96197e (first commit)
   },
   {
     icon: Award,
@@ -55,10 +46,7 @@ const certificates = [
     color: "from-violet-400 to-purple-500",
     bgColor: "bg-violet-50",
     borderColor: "border-violet-200",
-<<<<<<< HEAD
-=======
     certificateUrl: "/certificates/learning-system.pdf",
->>>>>>> c96197e (first commit)
   },
 ];
 
@@ -85,22 +73,6 @@ export function Certificates() {
   }, []);
 
   return (
-<<<<<<< HEAD
-    <section id="certificates" ref={sectionRef} className="py-32 relative overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/20 to-background" />
-      
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
-        {/* Header */}
-        <div className={`text-center mb-16 ${isVisible ? "animate-slide-up" : "opacity-0"}`}>
-          <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-            Credentials
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Professional Validation
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-xl mx-auto">
-=======
     <section id="certificates" ref={sectionRef} className="py-16 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-linear-to-b from-background via-secondary/20 to-background" />
@@ -115,17 +87,12 @@ export function Certificates() {
             Professional Validation
           </h2>
           <p className="text-base text-muted-foreground max-w-xl mx-auto">
->>>>>>> c96197e (first commit)
             Industry certifications demonstrating expertise across security, development, and digital competency.
           </p>
         </div>
 
         {/* Certificates Grid */}
-<<<<<<< HEAD
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-=======
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
->>>>>>> c96197e (first commit)
           {certificates.map((cert, i) => (
             <div
               key={cert.title}
@@ -135,20 +102,12 @@ export function Certificates() {
               onMouseLeave={() => setHoveredIndex(null)}
             >
               <div 
-<<<<<<< HEAD
-                className={`relative h-full p-8 rounded-3xl ${cert.bgColor} border-2 ${cert.borderColor} transition-all duration-500 ${
-=======
                 className={`relative h-full p-6 rounded-3xl ${cert.bgColor} border-2 ${cert.borderColor} transition-all duration-500 ${
->>>>>>> c96197e (first commit)
                   hoveredIndex === i ? "shadow-2xl -translate-y-2" : ""
                 }`}
               >
                 {/* Gradient Overlay on Hover */}
-<<<<<<< HEAD
-                <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${cert.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
-=======
                 <div className={`absolute inset-0 rounded-3xl bg-linear-to-br ${cert.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
->>>>>>> c96197e (first commit)
                 
                 {/* Verified Badge */}
                 <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-white shadow-lg flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 scale-50 group-hover:scale-100">
@@ -156,26 +115,15 @@ export function Certificates() {
                 </div>
 
                 {/* Icon */}
-<<<<<<< HEAD
-                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${cert.color} flex items-center justify-center mb-6 transition-transform duration-500 ${
-                  hoveredIndex === i ? "scale-110 rotate-6" : ""
-                }`}>
-                  <cert.icon className="w-8 h-8 text-white" />
-=======
                 <div className={`w-14 h-14 rounded-2xl bg-linear-to-br ${cert.color} flex items-center justify-center mb-6 transition-transform duration-500 ${
                   hoveredIndex === i ? "scale-110 rotate-6" : ""
                 }`}>
                   <cert.icon className="w-7 h-7 text-white" />
->>>>>>> c96197e (first commit)
                 </div>
 
                 {/* Content */}
                 <div className="relative z-10">
-<<<<<<< HEAD
-                  <h3 className="text-xl font-bold text-foreground mb-2">{cert.title}</h3>
-=======
                   <h3 className="text-lg font-bold text-foreground mb-2">{cert.title}</h3>
->>>>>>> c96197e (first commit)
                   <p className="text-sm text-muted-foreground uppercase tracking-wider mb-4">
                     {cert.subtitle}
                   </p>
@@ -188,30 +136,12 @@ export function Certificates() {
                 </div>
 
                 {/* Decorative Corner */}
-<<<<<<< HEAD
-                <div className={`absolute bottom-0 right-0 w-24 h-24 rounded-tl-full bg-gradient-to-br ${cert.color} opacity-10`} />
-=======
                 <div className={`absolute bottom-0 right-0 w-24 h-24 rounded-tl-full bg-linear-to-br ${cert.color} opacity-10`} />
->>>>>>> c96197e (first commit)
               </div>
             </div>
           ))}
         </div>
 
-<<<<<<< HEAD
-        {/* Bottom CTA */}
-        <div className={`text-center mt-16 ${isVisible ? "animate-slide-up" : "opacity-0"}`} style={{ animationDelay: "0.5s" }}>
-          <p className="text-muted-foreground mb-4">
-            Continuously learning and earning new certifications
-          </p>
-          <a 
-            href="#" 
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-secondary border border-border text-foreground font-medium hover:bg-secondary/80 transition-colors"
-          >
-            <Award className="w-4 h-4" />
-            View All Credentials
-          </a>
-=======
         {/* PDF Gallery */}
         <div className={`mt-8 pt-8 border-t border-border ${isVisible ? "animate-slide-up" : "opacity-0"}`}>
           <div className="mb-6">
@@ -263,7 +193,6 @@ export function Certificates() {
               </div>
             ))}
           </div>
->>>>>>> c96197e (first commit)
         </div>
       </div>
     </section>

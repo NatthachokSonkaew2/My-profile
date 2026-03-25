@@ -99,8 +99,8 @@ export function Projects() {
   return (
     <section id="projects" ref={sectionRef} className="py-32 relative overflow-hidden">
       {/* Background Decoration */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-primary/5 to-transparent rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-violet-500/5 to-transparent rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-150 h-150 bg-linear-to-bl from-primary/5 to-transparent rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-100 h-100 bg-linear-to-tr from-violet-500/5 to-transparent rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header */}
@@ -136,7 +136,7 @@ export function Projects() {
                 {/* Image with Parallax Effect */}
                 <div className="relative h-64 overflow-hidden">
                   <div className={cn(
-                    "absolute inset-0 bg-gradient-to-br",
+                    "absolute inset-0 bg-linear-to-br",
                     project.gradient,
                     "z-10"
                   )} />
@@ -153,7 +153,7 @@ export function Projects() {
                   
                   {/* Overlay on Hover */}
                   <div className={cn(
-                    "absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/40 to-transparent z-20 flex items-end justify-center pb-6 transition-opacity duration-500",
+                    "absolute inset-0 bg-linear-to-t from-foreground/80 via-foreground/40 to-transparent z-20 flex items-end justify-center pb-6 transition-opacity duration-500",
                     hoveredIndex === idx ? "opacity-100" : "opacity-0"
                   )}>
                     <button className="flex items-center gap-2 px-6 py-3 rounded-full bg-white text-foreground font-semibold hover:bg-primary hover:text-white transition-colors">
@@ -213,7 +213,7 @@ export function Projects() {
                 )}>
                   <div className={cn(
                     "w-full h-full rounded-bl-full",
-                    `bg-gradient-to-br ${project.gradient}`
+                    `bg-linear-to-br ${project.gradient}`
                   )} />
                 </div>
               </div>
@@ -276,7 +276,7 @@ function ProjectModal({
             className="object-cover"
             unoptimized
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-card via-transparent to-transparent" />
           
           <button
             onClick={onClose}

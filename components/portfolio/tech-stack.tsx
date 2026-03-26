@@ -37,7 +37,7 @@ export function TechStack() {
   return (
     <section ref={sectionRef} className="py-20 relative overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/30 to-background" />
+      <div className="absolute inset-0 bg-linear-to-b from-background via-secondary/30 to-background" />
       
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <p className="text-center text-sm text-muted-foreground uppercase tracking-[0.25em] mb-12 font-medium">
@@ -55,12 +55,12 @@ export function TechStack() {
               style={{ animationDelay: `${i * 0.1}s` }}
             >
               {/* Gradient border on hover */}
-              <div className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${tech.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 blur-xl`} />
-              <div className={`absolute inset-[1px] rounded-2xl bg-card -z-10`} />
+              <div className={`absolute inset-0 rounded-2xl bg-linear-to-r ${tech.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 blur-xl`} />
+              <div className={`absolute inset-px rounded-2xl bg-card -z-10`} />
               
               {/* Content */}
               <div className="flex items-center gap-3">
-                <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${tech.color} flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300`}>
+                <div className={`w-10 h-10 rounded-xl bg-linear-to-br ${tech.color} flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300`}>
                   <span className="text-white text-sm font-bold">
                     {tech.name.slice(0, 2)}
                   </span>
@@ -75,7 +75,7 @@ export function TechStack() {
 
         {/* Decorative Line */}
         <div className="mt-16 flex items-center justify-center">
-          <div className="h-px w-32 bg-gradient-to-r from-transparent via-border to-transparent" />
+          <div className="h-px w-32 bg-linear-to-r from-transparent via-border to-transparent" />
         </div>
       </div>
     </section>

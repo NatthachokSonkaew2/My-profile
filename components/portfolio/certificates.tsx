@@ -3,10 +3,10 @@
 import { useEffect, useRef, useState } from "react";
 import { Shield, Code2, Monitor, Award, CheckCircle2 } from "lucide-react";
 
-const certificates = [
+const certificatesData = [
   {
     icon: Shield,
-    title: "Cyber Security",
+    title: "e-Learning & Network Communication",
     subtitle: "Certified Professional",
     issuer: "CompTIA",
     year: "2024",
@@ -18,7 +18,7 @@ const certificates = [
   },
   {
     icon: Code2,
-    title: "Java Expert",
+    title: "System and Network Management",
     subtitle: "Oracle Certified",
     issuer: "Oracle",
     year: "2025",
@@ -30,7 +30,7 @@ const certificates = [
   },
   {
     icon: Monitor,
-    title: "IC3 GS5",
+    title: "Basic Computer Network",
     subtitle: "Digital Literacy",
     issuer: "Certiport",
     year: "2025",
@@ -42,7 +42,7 @@ const certificates = [
   },
   {
     icon: Award,
-    title: "Programming",
+    title: "Network Security Analysis, Assessment, and Vulnerability Management",
     subtitle: "Advanced Certification",
     issuer: "Meta",
     year: "2026",
@@ -54,7 +54,7 @@ const certificates = [
   },
   {
     icon: Shield,
-    title: "Cybersecurity",
+    title: "Cybersecurity Awareness",
     subtitle: "Advanced Certification",
     issuer: "Meta",
     year: "2026",
@@ -69,9 +69,16 @@ const certificates = [
 export function Certificates() {
   const [isVisible, setIsVisible] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [isMounted, setIsMounted] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isMounted) return;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -86,7 +93,7 @@ export function Certificates() {
     }
 
     return () => observer.disconnect();
-  }, []);
+  }, [isMounted]);
 
   return (
     <section id="certificates" ref={sectionRef} className="py-16 relative overflow-hidden">
@@ -109,7 +116,7 @@ export function Certificates() {
 
         {/* Certificates Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {certificates.map((cert, i) => (
+          {certificatesData.map((cert, i) => (
             <div
               key={cert.title}
               className={`group relative ${isVisible ? "animate-scale-in" : "opacity-0"}`}
@@ -181,7 +188,7 @@ export function Certificates() {
 
           {/* Certificates Image Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {certificates.map((cert, i) => (
+            {certificatesData.map((cert, i) => (
               <button
                 key={`pdf-${cert.title}`}
                 onClick={() => window.open(cert.certificateUrl, "_blank")}
@@ -191,7 +198,7 @@ export function Certificates() {
                 style={{ animationDelay: `${(i + 0.4) * 0.1}s` }}
               >
                 {/* Certificate Image */}
-                <div className="relative aspect-[1.4/1] bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center overflow-hidden">
+                <div className="relative aspect-[1.4/1] bg-linear-to-br from-gray-100 to-gray-200 flex items-center justify-center overflow-hidden">
                   <img
                     src={cert.imageUrl}
                     alt={`${cert.title} Certificate`}

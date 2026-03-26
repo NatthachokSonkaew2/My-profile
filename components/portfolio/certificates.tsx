@@ -14,6 +14,7 @@ const certificates = [
     bgColor: "bg-emerald-50",
     borderColor: "border-emerald-200",
     certificateUrl: "/certificates/learning-system.pdf",
+    imageUrl: "/certificates/certificates1.png",
   },
   {
     icon: Code2,
@@ -24,7 +25,8 @@ const certificates = [
     color: "from-blue-400 to-indigo-500",
     bgColor: "bg-blue-50",
     borderColor: "border-blue-200",
-    certificateUrl: "/certificates/learning-system.pdf",
+    certificateUrl: "/certificates/learning-system2.pdf",
+    imageUrl: "/certificates/certificates2.png",
   },
   {
     icon: Monitor,
@@ -35,7 +37,8 @@ const certificates = [
     color: "from-amber-400 to-orange-500",
     bgColor: "bg-amber-50",
     borderColor: "border-amber-200",
-    certificateUrl: "/certificates/learning-system.pdf",
+    certificateUrl: "/certificates/learning-system3.pdf",
+    imageUrl: "/certificates/certificates3.png",
   },
   {
     icon: Award,
@@ -46,7 +49,8 @@ const certificates = [
     color: "from-violet-400 to-purple-500",
     bgColor: "bg-violet-50",
     borderColor: "border-violet-200",
-    certificateUrl: "/certificates/learning-system.pdf",
+    certificateUrl: "/certificates/learning-system4.pdf",
+    imageUrl: "/certificates/certificates4.png",
   },
 ];
 
@@ -163,34 +167,49 @@ export function Certificates() {
             </div>
           </div>
 
-          {/* Certificates PDF Grid */}
+          {/* Certificates Image Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {certificates.map((cert, i) => (
-              <div
+              <button
                 key={`pdf-${cert.title}`}
-                className={`group relative rounded-2xl overflow-hidden shadow-lg border border-border hover:shadow-2xl transition-all duration-500 ${
+                onClick={() => window.open(cert.certificateUrl, "_blank")}
+                className={`group relative rounded-2xl overflow-hidden shadow-lg border border-border hover:shadow-2xl transition-all duration-500 text-left hover:scale-105 ${
                   isVisible ? "animate-scale-in" : "opacity-0"
                 }`}
                 style={{ animationDelay: `${(i + 0.4) * 0.1}s` }}
               >
-                {/* PDF Preview */}
-                <div className="relative h-48 bg-white overflow-hidden">
-                  <iframe
-                    src={cert.certificateUrl}
-                    className="w-full h-full border-none"
-                    title={`${cert.title} Certificate`}
+                {/* Certificate Image */}
+                <div className="relative aspect-[1.4/1] bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center overflow-hidden">
+                  <img
+                    src={cert.imageUrl}
+                    alt={`${cert.title} Certificate`}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    onError={(e) => {
+                      // Fallback if image not found
+                      (e.target as HTMLImageElement).src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='w-16 h-16 text-gray-400' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z'/%3E%3C/svg%3E";
+                    }}
                   />
-                  {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-linear-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  
+                  {/* Overlay on Hover */}
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
+                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center">
+                      <div className="bg-white text-foreground px-4 py-2 rounded-full font-semibold text-sm">
+                        View PDF
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
                 {/* Certificate Info */}
-                <div className="p-3 bg-background border-t border-border">
+                <div className="p-4 bg-background border-t border-border">
                   <h4 className="text-sm font-bold text-foreground mb-1">{cert.title}</h4>
-                  <p className="text-xs text-muted-foreground">{cert.issuer}</p>
-                  <p className="text-xs text-muted-foreground">{cert.year}</p>
+                  <p className="text-xs text-muted-foreground mb-1">{cert.subtitle}</p>
+                  <div className="flex items-center justify-between text-xs">
+                    <span className="text-muted-foreground">{cert.issuer}</span>
+                    <span className="font-semibold text-foreground">{cert.year}</span>
+                  </div>
                 </div>
-              </div>
+              </button>
             ))}
           </div>
         </div>

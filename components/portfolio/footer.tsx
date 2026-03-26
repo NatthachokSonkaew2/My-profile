@@ -6,7 +6,7 @@ const footerLinks = [
   { label: "Twitter", href: "#", icon: Twitter },
   { label: "GitHub", href: "#", icon: Github },
   { label: "LinkedIn", href: "#", icon: Linkedin },
-  { label: "Email", href: "mailto:hello@natthachok.dev", icon: Mail },
+  { label: "Email", href: "mailto:Chot03082521@gmail.com", icon: Mail },
 ];
 
 const navLinks = [
